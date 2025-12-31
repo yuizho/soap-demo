@@ -51,7 +51,7 @@ public class InvestoryServiceImpl implements InventoryPortType {
     public GetProductResponse getProduct(GetProductRequest parameters) {
         var id = parameters.getProductId();
         if (!products.containsKey(id)) {
-            return null;
+            throw new RuntimeException("Product not found");
         }
 
         var product = products.get(id);
