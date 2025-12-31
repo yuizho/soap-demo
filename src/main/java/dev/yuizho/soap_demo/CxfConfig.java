@@ -12,7 +12,7 @@ public class CxfConfig {
     @Bean
     public Endpoint endpoint(Bus bus, InvestoryServiceImpl investoryService) {
         EndpointImpl endpoint = new EndpointImpl(bus, investoryService);
-        endpoint.publish("/investry"); // http://localhost:8080/services/investry で公開
+        endpoint.publish("/inventory"); // http://localhost:8080/services/inventory で公開
         return endpoint;
     }
 }

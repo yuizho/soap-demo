@@ -40,6 +40,8 @@ public class InvestoryServiceImpl implements InventoryPortType {
             response.setMessage("Product not found");
         } else {
             response.setSuccess(true);
+            var product = products.get(id);
+            product.setQuantity(product.getQuantity() + parameters.getQuantity());
             response.setMessage("Updated!!");
         }
         return response;
